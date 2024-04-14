@@ -22,67 +22,12 @@
   * 로그인
 
 ## Database
-### (auth/users)
-
-### Profile
-* id
-* created_at
-
-* username
-* email
-* avatar_url
-* provider
-
-* tags
-
-### Post
-* id
-* created_at
-
-* user_id
-* title
-* content
-* is_published
-* is_deleted (archive)
-
-* likes
-* tags
-
-### Tag
-* id
-* created_at
-
-* tag
-
-### Comment
-* id
-* created_at
-
-* user_id
-* post_id
-* content
-
-* likes
-
-### Reply
-* id
-* created_at
-
-* user_id
-* comment_id
-* content
-
-* likes
-
-### Bookmark
-* id
-* created_at
-
-* user_id
-* post_id
-* memo
+* [db_schema.md](db_schema.md)
 
 ## Supabase
 - `.env.local`
 - `npm install @supabase/supabase-js`
 - `npm install @supabase/ssr`
+
+## API
+`supabase gen types typescript --project-id [project-id] --schema public > supabase/types.ts`
