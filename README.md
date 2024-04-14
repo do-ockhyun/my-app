@@ -82,4 +82,7 @@
 * post_id
 * memo
 
-
+## Supabase
+- `.env.local`
+- `npm install @supabase/supabase-js`
+- `npm install @supabase/ssr`

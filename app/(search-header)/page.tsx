@@ -1,9 +1,11 @@
-import Image from "next/image";
+import createClient from "@/supabase/client";
 
-export default function Home() {
+export default async function Home() {
+  const supabase = createClient('server');
+  const {data} = await supabase.auth.getUser();
   return (
     <main>
-      Hello
+      Hello - {data.user?.email}
     </main>
   );
 }
