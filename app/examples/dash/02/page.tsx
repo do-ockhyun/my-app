@@ -31,6 +31,8 @@ import {
 } from "@/components/ui/dropdown-menu"
 import { Input } from "@/components/ui/input"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
+import { Footer } from "@/components/custom/Footer"
+import { MenuItem } from "@/components/custom/MenuItem"
 
 export default function Dashboard() {
   return (
@@ -38,6 +40,8 @@ export default function Dashboard() {
       
       <div className="hidden border-r bg-muted/40 md:block">
         <div className="flex h-full max-h-screen flex-col gap-2">
+          
+{/* logo */}
           <div className="flex h-14 items-center border-b px-4 lg:h-[60px] lg:px-6">
             <Link href="/" className="flex items-center gap-2 font-semibold">
               <Package2 className="h-6 w-6" />
@@ -49,70 +53,53 @@ export default function Dashboard() {
             </Button>
           </div>
 
+
+{/* menu */}
           <div className="flex-1">
             <nav className="grid items-start px-2 text-sm font-medium lg:px-4">
-              <Link
-                href="#"
-                className="flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary"
-              >
+              <MenuItem selected={true}>
                 <Home className="h-4 w-4" />
                 Dashboard
-              </Link>
-              <Link
-                href="#"
-                className="flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary"
-              >
+              </MenuItem>
+
+              <MenuItem selected={false} badge={6}>
                 <ShoppingCart className="h-4 w-4" />
                 Orders
-                <Badge className="ml-auto flex h-6 w-6 shrink-0 items-center justify-center rounded-full">
-                  6
-                </Badge>
-              </Link>
-              <Link
-                href="#"
-                className="flex items-center gap-3 rounded-lg bg-muted px-3 py-2 text-primary transition-all hover:text-primary"
-              >
+              </MenuItem>
+
+              <MenuItem selected={false}>
                 <Package className="h-4 w-4" />
-                Products{" "}
-              </Link>
-              <Link
-                href="#"
-                className="flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary"
-              >
+                Products
+              </MenuItem>
+
+              <MenuItem selected={false}>
                 <Users className="h-4 w-4" />
                 Customers
-              </Link>
-              <Link
-                href="#"
-                className="flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary"
-              >
+              </MenuItem>
+
+              <MenuItem selected={false}>
                 <LineChart className="h-4 w-4" />
                 Analytics
-              </Link>
+              </MenuItem>
             </nav>
           </div>
 
+
           <div className="mt-auto p-4">
-            <Card>
-              <CardHeader className="p-2 pt-0 md:p-4">
-                <CardTitle>Upgrade to Pro</CardTitle>
-                <CardDescription>
-                  Unlock all features and get unlimited access to our support
-                  team.
-                </CardDescription>
-              </CardHeader>
-              <CardContent className="p-2 pt-0 md:p-4 md:pt-0">
-                <Button size="sm" className="w-full">
-                  Upgrade
-                </Button>
-              </CardContent>
-            </Card>
+            <Footer></Footer>
           </div>
         </div>
       </div>
 
+
+{/* fixed */}
       <div className="flex flex-col">
+
+
+{/* header */}
         <header className="flex h-14 items-center gap-4 border-b bg-muted/40 px-4 lg:h-[60px] lg:px-6">
+
+{/* menu */}
           <Sheet>
             <SheetTrigger asChild>
               <Button
@@ -190,6 +177,8 @@ export default function Dashboard() {
               </div>
             </SheetContent>
           </Sheet>
+
+{/* search-bar */}
           <div className="w-full flex-1">
             <form>
               <div className="relative">
@@ -202,6 +191,7 @@ export default function Dashboard() {
               </div>
             </form>
           </div>
+{/* My */}
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
               <Button variant="secondary" size="icon" className="rounded-full">
@@ -219,7 +209,10 @@ export default function Dashboard() {
             </DropdownMenuContent>
           </DropdownMenu>
         </header>
+
+{/* body */}
         <main className="flex flex-1 flex-col gap-4 p-4 lg:gap-6 lg:p-6">
+
           <div className="flex items-center">
             <h1 className="text-lg font-semibold md:text-2xl">Inventory</h1>
           </div>
@@ -235,6 +228,8 @@ export default function Dashboard() {
             </div>
           </div>
         </main>
+
+
       </div>
     </div>
   )
